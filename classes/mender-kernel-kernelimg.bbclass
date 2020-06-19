@@ -46,7 +46,7 @@ do_mender_kernel_copy_bundle_or_initramfs() {
     cp         "${DEPLOY_DIR_IMAGE}/${INITRAMFS_IMAGE}-${MACHINE}.${INITRAMFS_FSTYPES}" "${IMAGE_ROOTFS}${BOOT_DIR}/"
     lnr "${IMAGE_ROOTFS}${BOOT_DIR}/${INITRAMFS_IMAGE}-${MACHINE}.${INITRAMFS_FSTYPES}" "${IMAGE_ROOTFS}${BOOT_DIR}/${MENDER/KERNEL_INITRAMFS_LINK_NAME}"
   else
-    bbplain "no initramfs or kernel bundle defined"
+    bbplain "meta-mender-kernel: no initramfs or kernel bundle defined"
   fi
 }
 addtask mender_kernel_copy_bundle_or_initramfs after do_rootfs before do_image_kernelimg
