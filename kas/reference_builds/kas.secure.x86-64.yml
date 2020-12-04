@@ -1,0 +1,12 @@
+header:
+  version : 1
+  includes:
+    - ../kas.efi-secure-boot.yml
+    - kas.min.x86-64.yml
+
+local_conf_header:
+  02_initramfs-image: |
+    # initramfs optional
+    INITRAMFS_IMAGE        = "mender-kernel-initramfs"
+    INITRAMFS_LINK_NAME    = "mender-kernel-initramfs"
+    INITRAMFS_IMAGE_BUNDLE = "1"

@@ -1,0 +1,16 @@
+header:
+  version : 1
+  includes:
+    - meta.yml
+
+local_conf_header:
+  00_meta-mender-kernel: |
+    require conf/include/mender-kernel.inc
+
+  01_meta-mender-kernel: |
+    # overwrite this section in a custom layer
+    #
+    # size (MB) of each kernel partition
+    # ideally this should be in a custom machine.conf with the
+    # rest of your MENDER size params
+    # MENDER/KERNEL_PART_SIZE_MB = "128"

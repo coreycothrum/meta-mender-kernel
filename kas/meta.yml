@@ -1,0 +1,29 @@
+header:
+  version : 1
+
+repos:
+  meta-mender-kernel:
+
+  meta-bitbake-variable-substitution:
+    url    : "https://github.com/coreycothrum/meta-bitbake-variable-substitution.git"
+    refspec: 36053874e264c998e395cc369dba16c0ac1aa307
+
+  meta-mender:
+    url    : "https://github.com/mendersoftware/meta-mender.git"
+    refspec: 850a275ad65fc730b8b74c9ee9397091395ddbd6
+    layers :
+      meta-mender-core:
+
+  poky:
+    url    : "https://git.yoctoproject.org/git/poky"
+    refspec: d3ad6a22dbb8b9a21d7fe11bf437a20dea95ec81
+    layers :
+      meta:
+      meta-poky:
+      meta-yocto-bsp:
+
+  meta-openembedded:
+    url    : "https://github.com/openembedded/meta-openembedded.git"
+    refspec: 2a5c534d2b9f01e9c0f39701fccd7fc874945b1c
+    layers :
+      meta-oe:

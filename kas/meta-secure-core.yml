@@ -1,0 +1,9 @@
+header:
+  version : 1
+
+repos:
+  meta-secure-core:
+    url    : "https://github.com/jiazhang0/meta-secure-core.git"
+    refspec: 628949305cdffff6798330d58e3d8c2bcf5c89f3
+    layers :
+      meta:

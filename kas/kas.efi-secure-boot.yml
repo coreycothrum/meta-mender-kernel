@@ -1,0 +1,19 @@
+header:
+  version : 1
+  includes:
+    - meta-secure-core.yml
+    - kas.yml
+
+local_conf_header:
+  05_efi-secure-boot: |
+    DISTRO_FEATURES_append += "efi-secure-boot modsign"
+
+repos:
+  meta-openembedded:
+    layers :
+      meta-perl:
+
+  meta-secure-core:
+    layers :
+      meta-efi-secure-boot:
+      meta-signing-key:

@@ -1,0 +1,27 @@
+SELoader from meta-secure-core/meta-efi-secure-boot does not support verification outside the /efi partition.
+
+To circumventing this, use shim to verify the kernel/initramfs instead of SELoader.
+  - grub should use 'chainloader' command instead of 'linux'
+  - requires that kernel/initramfs is bundled
+  - requires that kernel bundle is signed with sbsign
+
+SELoader will still be used to verify other files in the /efi partition. 
+
+--- a/90_mender_boot_grub.cfg
++++ b/90_mender_boot_grub.cfg
+@@ -28,12 +28,9 @@
+ fi
+ 
+ if [ "${drop_to_grub_prompt}" = "no" ]; then
+-    if linux ${mender_kernel_path}/${kernel_imagetype} root=${mender_root} ${bootargs}; then
+-        if test -n "${initrd_imagetype}" -a test -e ${mender_kernel_path}/${initrd_imagetype}; then
+-            initrd ${mender_kernel_path}/${initrd_imagetype}
+-        fi
+-        maybe_pause "Pausing before booting."
+-        boot
++    if chainloader ${mender_kernel_path}/${kernel_imagetype} root=${mender_root} ${bootargs}; then
++      maybe_pause "Pausing before booting."
++      boot
+     fi
+     maybe_pause "Pausing after failed boot."
+ fi
