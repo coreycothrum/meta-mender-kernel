@@ -13,7 +13,6 @@ local_conf_header:
     MENDER_ARTIFACT_NAME                 ?= "rel-DEV"
 
     MENDER_STORAGE_TOTAL_SIZE_MB          = "4096"
-    IMAGE_ROOTFS_SIZE                     = "1024"
     MENDER_DATA_PART_SIZE_MB              = "1024"
     MENDER_BOOT_PART_SIZE_MB              = "256"
 

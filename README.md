@@ -99,6 +99,9 @@ Commands executed from [docker image](https://github.com/coreycothrum/meta-mende
     # build TARGET image
     cd $YOCTO_WORKDIR && kas build $YOCTO_WORKDIR/meta-mender-kernel/kas/reference_builds/kas.min.x86-64.yml
 
+    # build QEMU image
+    cd $YOCTO_WORKDIR && kas build $YOCTO_WORKDIR/meta-mender-kernel/kas/reference_builds/kas.min.x86-64.yml:$YOCTO_WORKDIR/meta-mender-kernel/kas/reference_builds/kas.qemu.yml
+
 ## Contributing
 Please submit any patches against this layer via pull request.
 
