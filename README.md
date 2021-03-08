@@ -66,6 +66,9 @@ The following definitions should be added to ``local.conf`` or ``custom_machine.
     # ideally this should be in a custom machine.conf with the rest of the MENDER size params
     MENDER/KERNEL_PART_SIZE_MB = "256"
 
+The following should be added to the image recipe (e.g. ``core-image-minimal.bbappend``):
+    require conf/include/mender-kernel-image.inc
+
 #### kas
 Alternatively, a [kas](https://github.com/siemens/kas) file has been provided to help with setup/config. [Include](https://kas.readthedocs.io/en/latest/userguide.html#including-configuration-files-from-other-repos) `kas/kas.yml` from this layer in the top level kas file:
 

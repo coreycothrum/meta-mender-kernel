@@ -6,10 +6,9 @@ IMAGE_CLASSES += "          \
 "
 
 ################################################################################
-do_mender_kernel_update_fstab() {
+mender_update_fstab_file_append() {
   mender_kernel_delete_kernel_parts ${IMAGE_ROOTFS}${sysconfdir}/fstab
 }
-addtask do_mender_kernel_update_fstab after do_rootfs before do_image
 
 ################################################################################
 python do_mender_kernel_checks() {
@@ -41,6 +40,10 @@ python do_mender_kernel_checks() {
              "mender-growfs-data and MENDER_EXTRA_PARTS are mutually exclusive")
 
   ##############################################################################
+  if   bb.utils.contains('INITRAMFS_IMAGE_BUNDLE', '1', True, False, d):
+    if not d.getVar('INITRAMFS_IMAGE', None):
+      bb.fatal("INITRAMFS_IMAGE_BUNDLE is set w/o defining an INITRAMFS_IMAGE")
+
   if   bb.utils.contains('DISTRO_FEATURES', 'efi-secure-boot', True, False, d):
     if bb.utils.contains('SIGNING_MODEL'  , 'sample'         , True, False, d):
       bb.warn("efi-secure-boot is using sample SIGNING_MODEL, this is unsecure. Change before deploying.")
