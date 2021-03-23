@@ -67,6 +67,7 @@ The following definitions should be added to ``local.conf`` or ``custom_machine.
     MENDER/KERNEL_PART_SIZE_MB = "256"
 
 The following should be added to the image recipe (e.g. ``core-image-minimal.bbappend``):
+
     require conf/include/mender-kernel-image.inc
 
 #### kas
