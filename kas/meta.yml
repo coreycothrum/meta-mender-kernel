@@ -9,8 +9,8 @@ repos:
     refspec: e67ebb441a694f0c273cf681ab8ab05c5c1d2be2
 
   meta-mender:
-    url    : "https://github.com/mendersoftware/meta-mender.git"
-    refspec: d8ad8e05c79aeb125434472669dc42ec1fb2e179
+    url    : "https://github.com/coreycothrum/meta-mender.git"
+    refspec: f9034faf3128394f7ca95f16670e91c031699e53
     layers :
       meta-mender-core:
 
