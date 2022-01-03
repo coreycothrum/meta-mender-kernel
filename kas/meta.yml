@@ -10,13 +10,13 @@ repos:
 
   meta-mender:
     url    : "https://github.com/mendersoftware/meta-mender.git"
-    refspec: 045cfcfc3649b0505cee0b56af8946ef692cd67d
+    refspec: f830d2c54145a61286f8b29d1125b88b782612c9
     layers :
       meta-mender-core:
 
   poky:
     url    : "https://git.yoctoproject.org/git/poky"
-    refspec: 795339092f87672e4f68e4d3bc4cfd0e252d1831
+    refspec: 98d21218fcf1449d31368bf6216fcc2eebb0f529
     layers :
       meta:
       meta-poky:
@@ -24,6 +24,6 @@ repos:
 
   meta-openembedded:
     url    : "https://github.com/openembedded/meta-openembedded.git"
-    refspec: 69f94af4d91215e7d4e225bab54bf3bcfee42f1c
+    refspec: 95969f0f5f4264644a5dbfb6d4fb66e2ac3a2cde
     layers :
       meta-oe:
