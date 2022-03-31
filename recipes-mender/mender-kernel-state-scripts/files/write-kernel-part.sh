@@ -19,8 +19,9 @@ trap cleanup EXIT
 ################################################################################
 KERN_SRC_DIR="$(dirname @@MENDER_BOOT_PART_MOUNT_LOCATION@@)"
 
-BOOT_COUNT="$(fw_printenv bootcount | sed 's/[^=]*=//')"
-BOOT_PART="$(fw_printenv mender_boot_part | sed 's/[^=]*=//')"
+UPGRADE_AV="$(fw_printenv upgrade_available | sed 's/[^=]*=//')"
+BOOT_COUNT="$(fw_printenv bootcount         | sed 's/[^=]*=//')"
+BOOT_PART="$(fw_printenv  mender_boot_part  | sed 's/[^=]*=//')"
 KERN_PART=""
 ROOT_PART=""
 
@@ -30,7 +31,7 @@ ROOT_MNT_DIR="@@MENDER/KERNEL_ROOT_CANDIDATE_MNT_DIR@@"
 #BOOT_PART :   active partition
 #ROOT_PART : inactive partition
 #KERN_PART : inactive partition
-if   [ "$BOOT_PART" -eq "@@MENDER_ROOTFS_PART_A_NUMBER@@" ] && [ "$BOOT_COUNT" -eq "0" ]; then
+if   [ "$BOOT_PART" -eq "@@MENDER_ROOTFS_PART_A_NUMBER@@" ] && [ "$UPGRADE_AV" -ne "0" ]; then
   # an update has already happened, but the system hasn't restarted. mender is now overwriting it.
   # don't need to invert the reported mender_boot_part
   ROOT_PART="@@MENDER_ROOTFS_PART_A_NUMBER@@"
@@ -41,7 +42,7 @@ elif [ "$BOOT_PART" -eq "@@MENDER_ROOTFS_PART_A_NUMBER@@" ]; then
   ROOT_PART="@@MENDER_ROOTFS_PART_B_NUMBER@@"
   KERN_PART="@@MENDER/KERNEL_PART_B_NUMBER@@"
 
-elif [ "$BOOT_PART" -eq "@@MENDER_ROOTFS_PART_B_NUMBER@@" ] && [ "$BOOT_COUNT" -eq "0" ]; then
+elif [ "$BOOT_PART" -eq "@@MENDER_ROOTFS_PART_B_NUMBER@@" ] && [ "$UPGRADE_AV" -ne "0" ]; then
   # an update has already happened, but the system hasn't restarted. mender is now overwriting it.
   # don't need to invert the reported mender_boot_part
   ROOT_PART="@@MENDER_ROOTFS_PART_B_NUMBER@@"
@@ -57,8 +58,7 @@ else
 
 fi
 
-log "@@MENDER_STORAGE_DEVICE_BASE@@$BOOT_PART is the active partition"
-log "@@MENDER_STORAGE_DEVICE_BASE@@$KERN_PART will be updated with new kernel candidate"
+log "updating @@MENDER_STORAGE_DEVICE_BASE@@$KERN_PART with new kernel candidate from @@MENDER_STORAGE_DEVICE_BASE@@$ROOT_PART"
 
 if ! mount |                                      grep -q $ROOT_MNT_DIR; then
   mkdir -p                                                $ROOT_MNT_DIR
