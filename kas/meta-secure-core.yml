@@ -4,6 +4,6 @@ header:
 repos:
   meta-secure-core:
     url    : "https://github.com/coreycothrum/meta-secure-core.git"
-    refspec: 7393774f48294fb53f66f943bda39a42fd8c57fc
+    refspec: 6f83871c16c3e4f0864891778cca20fcb03564f4
     layers :
       meta:
