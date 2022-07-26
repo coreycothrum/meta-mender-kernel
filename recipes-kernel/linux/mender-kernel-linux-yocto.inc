@@ -16,7 +16,7 @@
 # This seems super hacky to me, but any google/reference I've pulled up is doing
 # it the same way.
 ################################################################################
-do_deploy_append() {
+do_deploy:append() {
     local bootdir="$(dirname ${MENDER_BOOT_PART_MOUNT_LOCATION})"
     local src_dir="${B}/${KERNEL_OUTPUT_DIR}"
     local dst_dir="${DEPLOYDIR}/${MENDER/KERNEL_KERN_BUILD_STAGING_DIR}"
@@ -37,7 +37,7 @@ do_deploy_append() {
         install -d                            "$dst_dir/"
         install -m  0644 "$src_dir/$src_name" "$dst_dir/$dst_name"
         rm      -fr                                                "$dst_dir/$lnr_name"
-        lnr                                   "$dst_dir/$dst_name" "$dst_dir/$lnr_name"
+        ln      -rs                           "$dst_dir/$dst_name" "$dst_dir/$lnr_name"
       done
     elif [ -n "${INITRAMFS_IMAGE}"  ]; then
       local src_dir="${DEPLOY_DIR_IMAGE}"
@@ -50,7 +50,7 @@ do_deploy_append() {
         install -d                            "$dst_dir/"
         install -m  0644 "$src_dir/$src_name" "$dst_dir/$dst_name"
         rm      -fr                                                "$dst_dir/$lnr_name"
-        lnr                                   "$dst_dir/$dst_name" "$dst_dir/$lnr_name"
+        ln      -rs                           "$dst_dir/$dst_name" "$dst_dir/$lnr_name"
       done
     fi
 }

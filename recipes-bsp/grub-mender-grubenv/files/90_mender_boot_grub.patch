@@ -1,3 +1,8 @@
+From 2f561be09fee4fdc213cc8ed2616c0e80bbdd38e Mon Sep 17 00:00:00 2001
+From: Corey Cothrum <contact@coreycothrum.com>
+Date: Fri, 4 Dec 2020 05:08:12 -0600
+Subject: [PATCH] feat: repo init
+
 SELoader from meta-secure-core/meta-efi-secure-boot does not support verification outside the /efi partition.
 
 To circumventing this, use shim to verify the kernel/initramfs instead of SELoader.
@@ -5,21 +10,27 @@ To circumventing this, use shim to verify the kernel/initramfs instead of SELoad
   - requires that kernel/initramfs is bundled
   - requires that kernel bundle is signed with sbsign
 
-SELoader will still be used to verify other files in the /efi partition. 
+SELoader will still be used to verify other files in the /efi partition.
 
+---
+ 90_mender_boot_grub.cfg | 9 +++------
+ 1 file changed, 3 insertions(+), 6 deletions(-)
+
+diff --git a/90_mender_boot_grub.cfg b/90_mender_boot_grub.cfg
+index f2494ff..c0d41d3 100644
 --- a/90_mender_boot_grub.cfg
 +++ b/90_mender_boot_grub.cfg
-@@ -28,12 +28,9 @@
- fi
+@@ -1,12 +1,9 @@
+ maybe_drop_to_grub_prompt
  
  if [ "${drop_to_grub_prompt}" = "no" ]; then
--    if linux ${mender_kernel_path}/${kernel_imagetype} root=${mender_root} ${bootargs}; then
--        if test -n "${initrd_imagetype}" -a test -e ${mender_kernel_path}/${initrd_imagetype}; then
--            initrd ${mender_kernel_path}/${initrd_imagetype}
+-    if linux "${mender_kernel_path}/${kernel_imagetype}" root="${mender_kernel_root}" ${bootargs}; then
+-        if test -n "${initrd_imagetype}" -a test -e "${mender_kernel_path}/${initrd_imagetype}"; then
+-            initrd "${mender_kernel_path}/${initrd_imagetype}"
 -        fi
 -        maybe_pause "Pausing before booting."
 -        boot
-+    if chainloader ${mender_kernel_path}/${kernel_imagetype} root=${mender_root} ${bootargs}; then
++    if chainloader "${mender_kernel_path}/${kernel_imagetype}" root="${mender_kernel_root}" ${bootargs}; then
 +      maybe_pause "Pausing before booting."
 +      boot
      fi

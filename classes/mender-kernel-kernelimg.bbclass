@@ -1,5 +1,5 @@
 ################################################################################
-IMAGE_CMD_kernelimg() {
+IMAGE_CMD:kernelimg() {
   local force_flag=""
   local root_dir_flag=""
 

@@ -1,6 +1,6 @@
 ################################################################################
 # the kernel recipe bundles and signs the kernel/initramfs. it does this
-# in do_deploy_append. Because of this, the expected files need to be copied
+# in do_deploy:append. Because of this, the expected files need to be copied
 # here w/ ROOTFS_POSTPROCESS_COMMAND.
 #
 # Refer to recipes-kernel/linux/mender-kernel-linux-yocto.inc
@@ -17,4 +17,4 @@ do_mender_kernel_deploy_to_image_rootfs() {
 
   rsync -avqI "$src_dir" "$dst_dir" --exclude "$(basename ${MENDER_BOOT_PART_MOUNT_LOCATION})"
 }
-ROOTFS_POSTPROCESS_COMMAND_append += " do_mender_kernel_deploy_to_image_rootfs;"
+ROOTFS_POSTPROCESS_COMMAND:append  = " do_mender_kernel_deploy_to_image_rootfs;"

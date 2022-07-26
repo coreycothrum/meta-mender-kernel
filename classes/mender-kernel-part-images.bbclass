@@ -1,4 +1,4 @@
-IMAGE_TYPEDEP_biosimg += "kernelimg"
-IMAGE_TYPEDEP_gptimg  += "kernelimg"
-IMAGE_TYPEDEP_sdimg   += "kernelimg"
-IMAGE_TYPEDEP_uefiimg += "kernelimg"
+IMAGE_TYPEDEP:biosimg += "kernelimg"
+IMAGE_TYPEDEP:gptimg  += "kernelimg"
+IMAGE_TYPEDEP:sdimg   += "kernelimg"
+IMAGE_TYPEDEP:uefiimg += "kernelimg"

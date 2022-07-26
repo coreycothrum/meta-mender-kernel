@@ -13,7 +13,7 @@ DEPENDS += "openssl-native"
 
 inherit user-key-store
 
-python do_mender_kernel_sign_append() {
+python do_mender_kernel_sign:append() {
   if not bb.utils.contains('DISTRO_FEATURES', 'efi-secure-boot', True, False, d):
     bb.fatal("do_mender_kernel_sign should not execute if efi-secure-boot is not enabled")
 

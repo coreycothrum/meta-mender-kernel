@@ -6,17 +6,17 @@ repos:
 
   meta-bitbake-variable-substitution:
     url    : "https://github.com/coreycothrum/meta-bitbake-variable-substitution.git"
-    refspec: e67ebb441a694f0c273cf681ab8ab05c5c1d2be2
+    refspec: 0043a84fab9abc33e2fec6fbae120eee1b733bb9
 
   meta-mender:
     url    : "https://github.com/mendersoftware/meta-mender.git"
-    refspec: 490a07804d62b63db07d09d2c6c3cf07d57446f4
+    refspec: 4664d5b7ebaa12dc3ba844843de8dd3d54a0585f
     layers :
       meta-mender-core:
 
   poky:
     url    : "https://git.yoctoproject.org/git/poky"
-    refspec: b41d4e46d30ed32e11d68466721a0f4056bad700
+    refspec: 8c489602f218bcf21de0d3c9f8cf620ea5f06430
     layers :
       meta:
       meta-poky:
@@ -24,6 +24,6 @@ repos:
 
   meta-openembedded:
     url    : "https://github.com/openembedded/meta-openembedded.git"
-    refspec: 86b864a4d8c28185a4a464583fb86f73aa22847a
+    refspec: a47ef046619d639dfbd3be2a13ef6d5b40fd40a1
     layers :
       meta-oe:

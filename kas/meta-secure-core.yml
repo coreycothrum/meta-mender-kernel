@@ -3,7 +3,7 @@ header:
 
 repos:
   meta-secure-core:
-    url    : "https://github.com/coreycothrum/meta-secure-core.git"
-    refspec: 6f83871c16c3e4f0864891778cca20fcb03564f4
+    url    : "https://github.com/jiazhang0/meta-secure-core.git"
+    refspec: d0a02859719f1a2c6b98d9d9afe785ec8535ec32
     layers :
       meta:

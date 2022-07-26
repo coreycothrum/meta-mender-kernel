@@ -1,7 +1,7 @@
-FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 PASSWD_FILE_MD5X         = "aa25087bf6cc1c7a3ea7147c0bfbbcfc"
 
-do_compile_append() {
+do_compile:append() {
   ##############################################################################
   sed -i '/search.file/d' ${WORKDIR}/cfg
 

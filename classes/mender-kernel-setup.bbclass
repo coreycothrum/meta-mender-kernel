@@ -6,7 +6,7 @@ IMAGE_CLASSES += "          \
 "
 
 ################################################################################
-mender_update_fstab_file_append() {
+mender_update_fstab_file:append() {
   mender_kernel_delete_kernel_parts ${IMAGE_ROOTFS}${sysconfdir}/fstab
 }
 
