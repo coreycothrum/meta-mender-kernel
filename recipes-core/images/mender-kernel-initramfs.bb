@@ -1,7 +1,7 @@
 SUMMARY                    = "mender-kernel example initramfs"
 LICENSE                    = "MIT"
 
-export IMAGE_BASENAME      = "mender-kernel-initramfs"
+export IMAGE_BASENAME      = "${MLPREFIX}mender-kernel-initramfs"
 IMAGE_FEATURES             = ""
 IMAGE_LINGUAS              = ""
 IMAGE_FSTYPES              = "${INITRAMFS_FSTYPES}"
@@ -19,6 +19,8 @@ PACKAGE_INSTALL            = "                               \
                                ${ROOTFS_BOOTSTRAP_INSTALL}   \
                                ${VIRTUAL-RUNTIME_base-utils} \
                              "
+
+COMPATIBLE_HOST = '(x86_64.*|i.86.*|arm.*|aarch64.*)-(linux.*|freebsd.*)'
 
 inherit core-image
 deltask do_packagedata
