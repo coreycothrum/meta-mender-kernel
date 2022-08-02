@@ -19,6 +19,10 @@ trap cleanup EXIT
 ################################################################################
 KERN_SRC_DIR="$(dirname @@MENDER_BOOT_PART_MOUNT_LOCATION@@)"
 
+if ! command -v fw_printenv &> /dev/null; then
+  alias fw_printenv='grub-mender-grubenv-print'
+fi
+
 UPGRADE_AV="$(fw_printenv upgrade_available | sed 's/[^=]*=//')"
 BOOT_COUNT="$(fw_printenv bootcount         | sed 's/[^=]*=//')"
 BOOT_PART="$(fw_printenv  mender_boot_part  | sed 's/[^=]*=//')"
