@@ -4,6 +4,6 @@ header:
 repos:
   meta-secure-core:
     url    : "https://github.com/jiazhang0/meta-secure-core.git"
-    refspec: d0a02859719f1a2c6b98d9d9afe785ec8535ec32
+    refspec: 39a46d6b15daca8e3213805077d50d632e0f537b
     layers :
       meta:

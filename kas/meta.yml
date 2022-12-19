@@ -10,13 +10,13 @@ repos:
 
   meta-mender:
     url    : "https://github.com/mendersoftware/meta-mender.git"
-    refspec: 133e86f0255f77b3a9e967810327979b572e0cfd
+    refspec: bd64bbc28517d1ab07bfa225f8cad16beda167aa
     layers :
       meta-mender-core:
 
   poky:
     url    : "https://git.yoctoproject.org/git/poky"
-    refspec: 94d917219993b45b9d69a87aba1b69a6ca8f4d1e
+    refspec: 4a88ada88fa54587e373fb2b831466648433f6a8
     layers :
       meta:
       meta-poky:
