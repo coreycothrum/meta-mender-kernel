@@ -3,7 +3,7 @@ header:
 
 repos:
   meta-secure-core:
-    url    : "https://github.com/jiazhang0/meta-secure-core.git"
-    refspec: 39a46d6b15daca8e3213805077d50d632e0f537b
+    url    : "https://github.com/Wind-River/meta-secure-core.git"
+    refspec: d218a980afafcb2764cf900e0ec27a41546a20e3
     layers :
       meta:
