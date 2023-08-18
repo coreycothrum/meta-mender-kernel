@@ -10,7 +10,7 @@ repos:
 
   meta-mender:
     url    : "https://github.com/mendersoftware/meta-mender.git"
-    refspec: fccaabc37456407c0a866982be9e394cfc208e27
+    refspec: 9166e577fa3f0fbac50d6bc9bb497ad37a4c4952
     layers :
       meta-mender-core:
 
