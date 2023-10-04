@@ -1,8 +1,8 @@
 header:
-  version : 1
+  version : 14
   includes:
-    - ../kas.efi-secure-boot.yml
-    - kas.min.x86-64.yml
+    - kas/kas.efi-secure-boot.yml
+    - kas/reference_builds/kas.min.x86-64.yml
 
 local_conf_header:
   02_initramfs-image: |

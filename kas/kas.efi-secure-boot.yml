@@ -1,8 +1,8 @@
 header:
-  version : 1
+  version : 14
   includes:
-    - meta-secure-core.yml
-    - kas.yml
+    - kas/meta-secure-core.yml
+    - kas/kas.yml
 
 local_conf_header:
   05_efi-secure-boot: |
