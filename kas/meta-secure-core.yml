@@ -4,6 +4,6 @@ header:
 repos:
   meta-secure-core:
     url    : "https://github.com/Wind-River/meta-secure-core.git"
-    refspec: d218a980afafcb2764cf900e0ec27a41546a20e3
+    refspec: 8dc9f1b4a735eccee65a8896760e473e110d147e
     layers :
       meta:
