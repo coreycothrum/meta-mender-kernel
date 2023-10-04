@@ -1,9 +1,10 @@
 header:
-  version : 1
+  version : 14
 
 repos:
   meta-secure-core:
-    url    : "https://github.com/Wind-River/meta-secure-core.git"
-    refspec: 8dc9f1b4a735eccee65a8896760e473e110d147e
+    url   : "https://github.com/Wind-River/meta-secure-core.git"
+    branch: kirkstone
+    commit: 8dc9f1b4a735eccee65a8896760e473e110d147e
     layers :
       meta:

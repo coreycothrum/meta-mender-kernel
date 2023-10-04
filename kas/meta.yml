@@ -1,29 +1,33 @@
 header:
-  version : 1
+  version : 14
 
 repos:
   meta-mender-kernel:
 
   meta-bitbake-variable-substitution:
-    url    : "https://github.com/coreycothrum/meta-bitbake-variable-substitution.git"
-    refspec: 0043a84fab9abc33e2fec6fbae120eee1b733bb9
+    url   : "https://github.com/coreycothrum/meta-bitbake-variable-substitution.git"
+    branch: master
+    commit: 0043a84fab9abc33e2fec6fbae120eee1b733bb9
 
   meta-mender:
-    url    : "https://github.com/mendersoftware/meta-mender.git"
-    refspec: 684fa23a731208b4f813d36eac8f034fe646f19c
+    url   : "https://github.com/mendersoftware/meta-mender.git"
+    branch: kirkstone
+    commit: 684fa23a731208b4f813d36eac8f034fe646f19c
     layers :
       meta-mender-core:
 
   poky:
-    url    : "https://git.yoctoproject.org/git/poky"
-    refspec: d6b8790370500b99ca11f0d8a05c39b661ab2ba6
+    url   : "https://git.yoctoproject.org/git/poky"
+    branch: kirkstone
+    commit: d6b8790370500b99ca11f0d8a05c39b661ab2ba6
     layers :
       meta:
       meta-poky:
       meta-yocto-bsp:
 
   meta-openembedded:
-    url    : "https://github.com/openembedded/meta-openembedded.git"
-    refspec: 9c5541f7e18a1fac3b8dea71e1ebb8398d58e6ff
+    url   : "https://github.com/openembedded/meta-openembedded.git"
+    branch: kirkstone
+    commit: 9c5541f7e18a1fac3b8dea71e1ebb8398d58e6ff
     layers :
       meta-oe:
