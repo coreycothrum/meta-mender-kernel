@@ -114,4 +114,4 @@ Commits must be signed off.
 Use [conventional commits](https://www.conventionalcommits.org/).
 
 ## Release Schedule and Roadmap
-This layer will remain compatible with the latest [YOCTO LTS](https://wiki.yoctoproject.org/wiki/Releases). This mirrors what [meta-mender]((https://github.com/mendersoftware/meta-mender) does.
+This layer will remain compatible with the latest [YOCTO LTS](https://wiki.yoctoproject.org/wiki/Releases). This mirrors what [meta-mender](https://github.com/mendersoftware/meta-mender) does.
