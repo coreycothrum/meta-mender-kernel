@@ -4,7 +4,7 @@ header:
 repos:
   meta-secure-core:
     url   : "https://github.com/Wind-River/meta-secure-core.git"
-    branch: kirkstone
-    commit: 8dc9f1b4a735eccee65a8896760e473e110d147e
+    branch: mickledore
+    commit: 8f552ed4954b1368de43aeda59f8ead02e468fad
     layers :
       meta:
