@@ -24,10 +24,6 @@ python do_mender_kernel_checks() {
     #TODO : probably would require mender/uboot patches
     bb.fatal("mender-kernel does not currently support mender-uboot")
 
-  elif bb.utils.contains('MENDER_FEATURES_ENABLE', 'mender-partuuid'   , True, False, d):
-    #TODO : just haven't looked into it at all
-    bb.fatal("mender-kernel does not currently support mender-partuuid")
-
   ##############################################################################
   elif int(d.expand('${MENDER_BOOT_PART_SIZE_MB}', 0)) <= 0:
     bb.fatal("mender-kernel requires MENDER_BOOT_PART_SIZE_MB > 0")

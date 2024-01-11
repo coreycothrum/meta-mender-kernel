@@ -8,9 +8,10 @@ MENDER_EXTRA_PARTS[kernelb]                = "--label=${MENDER/KERNEL_PART_B_NAM
 MENDER_EXTRA_PARTS_SIZES_MB[kernela]       = "${MENDER/KERNEL_PART_SIZE_MB}"
 MENDER_EXTRA_PARTS_SIZES_MB[kernelb]       = "${MENDER/KERNEL_PART_SIZE_MB}"
 
-MENDER/KERNEL_PART_A                       = "${MENDER_STORAGE_DEVICE_BASE}${MENDER/KERNEL_PART_A_NUMBER}"
+
+MENDER/KERNEL_PART_A                       = "${@bb.utils.contains('MENDER_FEATURES', 'mender-partuuid', "/dev/disk/by-partuuid/" + (d.getVarFlags('MENDER_EXTRA_PARTS_UUID') or dict()).get('kernela', ''), d.getVar('MENDER_STORAGE_DEVICE_BASE') + d.getVar('MENDER/KERNEL_PART_A_NUMBER'), d)}"
 MENDER/KERNEL_PART_A_NUMBER                = "${@mender_get_extra_parts_offset_by_id(d, "${MENDER/KERNEL_PART_A_NAME}")}"
-MENDER/KERNEL_PART_B                       = "${MENDER_STORAGE_DEVICE_BASE}${MENDER/KERNEL_PART_B_NUMBER}"
+MENDER/KERNEL_PART_B                       = "${@bb.utils.contains('MENDER_FEATURES', 'mender-partuuid', "/dev/disk/by-partuuid/" + (d.getVarFlags('MENDER_EXTRA_PARTS_UUID') or dict()).get('kernelb', ''), d.getVar('MENDER_STORAGE_DEVICE_BASE') + d.getVar('MENDER/KERNEL_PART_B_NUMBER'), d)}"
 MENDER/KERNEL_PART_B_NUMBER                = "${@mender_get_extra_parts_offset_by_id(d, "${MENDER/KERNEL_PART_B_NAME}")}"
 
 MENDER/KERNEL_PART_FSOPTS                ??= "${MENDER/KERNEL_PART_FSOPTS_DEFAULT}"
