@@ -5,6 +5,6 @@ repos:
   meta-secure-core:
     url   : "https://github.com/Wind-River/meta-secure-core.git"
     branch: kirkstone
-    commit: 8dc9f1b4a735eccee65a8896760e473e110d147e
+    commit: 4c183bdb1a8cc948a74911a40a016e54ffe234b7
     layers :
       meta:
