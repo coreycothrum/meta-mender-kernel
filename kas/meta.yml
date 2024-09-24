@@ -7,19 +7,19 @@ repos:
   meta-bitbake-variable-substitution:
     url   : "https://github.com/coreycothrum/meta-bitbake-variable-substitution.git"
     branch: master
-    commit: 0043a84fab9abc33e2fec6fbae120eee1b733bb9
+    commit: 6588cbf7a18d96fd02183eb81fb309f0ea3fb6af
 
   meta-mender:
     url   : "https://github.com/mendersoftware/meta-mender.git"
-    branch: kirkstone
-    commit: f5455b66f259a49d78ca96f0730b57f0f6b3a6a5
+    branch: scarthgap
+    commit: 2f70dbad1441055c299332b7ef33dfe1e4f50c1c
     layers :
       meta-mender-core:
 
   poky:
     url   : "https://git.yoctoproject.org/git/poky"
-    branch: kirkstone
-    commit: e575d02196b0013c25f8064e4dbe3fc2a0ef72d0
+    branch: scarthgap
+    commit: 0b37512fb4b231cc106768e2a7328431009b3b70
     layers :
       meta:
       meta-poky:
@@ -27,7 +27,7 @@ repos:
 
   meta-openembedded:
     url   : "https://github.com/openembedded/meta-openembedded.git"
-    branch: kirkstone
-    commit: 70b217ecc812296d98e1aa027a7d182a8019dded
+    branch: scarthgap
+    commit: 1235dd4ed4a57e67683c045ad76b6a0f9e896b45
     layers :
       meta-oe:

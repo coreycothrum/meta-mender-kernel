@@ -4,7 +4,7 @@ header:
 repos:
   meta-secure-core:
     url   : "https://github.com/Wind-River/meta-secure-core.git"
-    branch: kirkstone
-    commit: 4c183bdb1a8cc948a74911a40a016e54ffe234b7
+    branch: scarthgap
+    commit: 0aa7452355abc39b700f8787eab1b655f6099407
     layers :
-      meta:
+      meta-secure-core-common:
