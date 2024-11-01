@@ -29,5 +29,3 @@ do_compile() {
 
   ${@bitbake_variables_search_and_sub(        "${MENDER_STATE_SCRIPTS_DIR}/", r"${BITBAKE_VAR_SUB_DELIM}", d)}
 }
-
-do_compile[nostamp] = "1"
