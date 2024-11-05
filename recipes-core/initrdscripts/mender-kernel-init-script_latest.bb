@@ -11,6 +11,7 @@ RCONFLICTS:${PN} += "                   \
                       systemd-initramfs \
                     "
 RDEPENDS:${PN}    = "                   \
+                      bash              \
                       coreutils         \
                       kmod              \
                       util-linux        \
