@@ -7,7 +7,7 @@ repos:
   meta-bitbake-variable-substitution:
     url   : "https://github.com/coreycothrum/meta-bitbake-variable-substitution.git"
     branch: master
-    commit: d327090417b56a0357278d98cb2f18c51edda9b1
+    commit: 97348a2a59f3d451c7b9a4eb116cff9833f6b4dd
 
   meta-mender:
     url   : "https://github.com/mendersoftware/meta-mender.git"
