@@ -12,14 +12,14 @@ repos:
   meta-mender:
     url   : "https://github.com/mendersoftware/meta-mender.git"
     branch: kirkstone
-    commit: 79e1d551273784bdaf399cf610169a1df8130b08
+    commit: ab941b0b3db96580db54ce0119288deb4c479765
     layers :
       meta-mender-core:
 
   poky:
     url   : "https://github.com/yoctoproject/poky.git"
     branch: kirkstone
-    commit: db0505b9ba33015038eaecce835fd991db32ed20
+    commit: e9e862752d122945318685ff9eaf6a3090f0f961
     layers :
       meta:
       meta-poky:
@@ -28,6 +28,6 @@ repos:
   meta-openembedded:
     url   : "https://github.com/openembedded/meta-openembedded.git"
     branch: kirkstone
-    commit: 7b3fdcdfaab2fc964bbf9eec2cce4e03001fa8cf
+    commit: e42549cef364ae09b3b7c8b64bbeab32e50f1bb0
     layers :
       meta-oe:
