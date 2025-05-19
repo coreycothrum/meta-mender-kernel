@@ -5,6 +5,6 @@ repos:
   meta-secure-core:
     url   : "https://github.com/Wind-River/meta-secure-core.git"
     branch: scarthgap
-    commit: 0aa7452355abc39b700f8787eab1b655f6099407
+    commit: 7a51f091cccfb8f629ce962f13b7b45d23005093
     layers :
       meta-secure-core-common:
