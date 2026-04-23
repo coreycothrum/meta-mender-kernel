@@ -12,7 +12,7 @@ repos:
   meta-mender:
     url   : "https://github.com/mendersoftware/meta-mender.git"
     branch: scarthgap
-    commit: 00d4dfc36625a27ca0d6ad7aa33eeeab397281a9
+    commit: f7225aefdb89e5979679925f5a97aa3b17086c2b
     layers :
       meta-mender-core:
 
