@@ -1,5 +1,4 @@
 #!/bin/sh
-set -e
 
 function log {
   echo "$@" >&2
@@ -8,17 +7,11 @@ function log {
 function cleanup {
   sync
 
-  # cleanup kernel mount
-  if mount | grep -q $KERN_MNT_DIR; then
-    umount           $KERN_MNT_DIR
-  fi
-  rm -fr             $KERN_MNT_DIR
+  mount | grep -q $KERN_MNT_DIR && umount -l $KERN_MNT_DIR
+  rm -fr          $KERN_MNT_DIR
 
-  # cleanup rootfs mount
-  if mount | grep -q $ROOT_MNT_DIR; then
-    umount           $ROOT_MNT_DIR
-  fi
-  rm -fr             $ROOT_MNT_DIR
+  mount | grep -q $ROOT_MNT_DIR && umount -l $ROOT_MNT_DIR
+  rm -fr          $ROOT_MNT_DIR
 
   sync
 }

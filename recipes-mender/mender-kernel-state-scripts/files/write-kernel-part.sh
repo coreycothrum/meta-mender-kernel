@@ -63,19 +63,13 @@ fi
 
 log "updating $KERN_PART with new kernel candidate from $ROOT_PART"
 
-if ! mount |                                      grep -q $ROOT_MNT_DIR; then
-  mkdir -p                                                $ROOT_MNT_DIR
-  mount -o ro  $ROOT_PART   $ROOT_MNT_DIR
-  log "mounted $ROOT_PART @ $ROOT_MNT_DIR"
-fi
+mkdir -p        $ROOT_MNT_DIR
+mount | grep -q $ROOT_MNT_DIR || mount -o ro  $ROOT_PART $ROOT_MNT_DIR
 
-if ! mount |                                      grep -q $KERN_MNT_DIR; then
-  mkdir -p                                                $KERN_MNT_DIR
-  mount -o rw  $KERN_PART   $KERN_MNT_DIR
-  log "mounted $KERN_PART @ $KERN_MNT_DIR"
-fi
+mkdir -p        $KERN_MNT_DIR
+mount | grep -q $KERN_MNT_DIR || mount -o rw  $KERN_PART $KERN_MNT_DIR
 
-rsync -avqI $ROOT_MNT_DIR/$KERN_SRC_DIR/*                 $KERN_MNT_DIR --exclude $(basename @@MENDER_BOOT_PART_MOUNT_LOCATION@@)
+rsync -avqI $ROOT_MNT_DIR/$KERN_SRC_DIR/* $KERN_MNT_DIR --exclude $(basename @@MENDER_BOOT_PART_MOUNT_LOCATION@@)
 
 log "finished updating kernel partition: $KERN_PART"
 
