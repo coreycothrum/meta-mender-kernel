@@ -1,5 +1,7 @@
 header:
   version : 14
+  includes:
+    - kas/poky.yml
 
 repos:
   meta-mender-kernel:
@@ -7,27 +9,18 @@ repos:
   meta-bitbake-variable-substitution:
     url   : "https://github.com/coreycothrum/meta-bitbake-variable-substitution.git"
     branch: master
-    commit: 97348a2a59f3d451c7b9a4eb116cff9833f6b4dd
+    commit: f32561bfd8d791df8127432649075a35194b4949
 
   meta-mender:
     url   : "https://github.com/mendersoftware/meta-mender.git"
-    branch: scarthgap
-    commit: f7225aefdb89e5979679925f5a97aa3b17086c2b
+    branch: wrynose
+    commit: b68d8c18ca8e15520268478b0eca1ca8ed98a0d6
     layers :
       meta-mender-core:
 
-  poky:
-    url   : "https://git.yoctoproject.org/git/poky"
-    branch: scarthgap
-    commit: 7d50718f90c51fb7f650c9db59b28c6e0194e5d2
-    layers :
-      meta:
-      meta-poky:
-      meta-yocto-bsp:
-
   meta-openembedded:
     url   : "https://github.com/openembedded/meta-openembedded.git"
-    branch: scarthgap
-    commit: 50292b4331431f58a01f5b5518a8645077fc63d6
+    branch: wrynose
+    commit: a43f0d532c399458cae44ce66f3799a220fbb497
     layers :
       meta-oe:

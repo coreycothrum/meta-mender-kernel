@@ -1,0 +1,40 @@
+# https://docs.yoctoproject.org/dev/dev-manual/poky-manual-setup.html#use-git-to-clone-the-layers
+# https://www.yoctoproject.org/development/releases
+header:
+  version : 14
+
+repos:
+    # https://downloads.yoctoproject.org/releases/yocto/yocto-6.0.1/RELEASENOTES
+    yocto-docs:
+        url: https://git.yoctoproject.org/yocto-docs
+        branch: wrynose
+        commit: 7ac955621b36a221126cd40f12c41fa98c213a24
+        layers:
+            yocto-docs: disabled
+
+    meta-openembedded-core:
+        url: https://git.openembedded.org/openembedded-core
+        branch: wrynose
+        commit: 06dd66e6220e5ce4ed4b9af4d8231ae5f0a8ce80
+        layers:
+            meta:
+
+    meta-yocto:
+        url: https://git.yoctoproject.org/meta-yocto
+        branch: wrynose
+        commit: 8251bdad5fda780a000fb41e6eda82eadf0fa39e
+        layers:
+            meta-poky:
+            meta-yocto-bsp:
+
+    meta-mingw:
+        url: https://git.yoctoproject.org/meta-mingw
+        branch: wrynose
+        commit: a4ba674d6a0a17e4c0bc4c11bbb9d0ea9de2b315
+
+    bitbake:
+        url: https://git.openembedded.org/bitbake
+        branch: "2.18"
+        commit: 22021758e66737bcf68dfd2b74adc6a0cb1d42d9
+        layers:
+            bitbake: disabled
