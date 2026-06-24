@@ -17,3 +17,6 @@ do_compile:append() {
     bbwarn "plaintext password.inc should be replaced with grub-mkpasswd-pbkdf2 generated hash"
   fi
 }
+
+deltask do_cleanconfigs
+addtask cleanconfigs after do_sign do_chownboot do_deploy before do_package
