@@ -25,6 +25,10 @@ fakeroot python do_sign_initramfs() {
 }
 
 do_sign_initramfs[prefuncs] += "${@bb.utils.contains('DISTRO_FEATURES', 'efi-secure-boot', 'check_deploy_keys', '', d)}"
-do_sign_initramfs[prefuncs] += "${@'check_boot_public_key' if d.getVar('GRUB_SIGN_VERIFY', True) else ''}"
+do_sign_initramfs[prefuncs] += "${@'check_boot_public_key' if d.getVar('GRUB_SIGN_VERIFY') == '1' else ''}"
 
+# do_sign_initramfs is called as a prefunc of do_image_complete, so ensure
+# required key setup hooks execute in do_image_complete as well.
+do_image_complete[prefuncs] += "${@bb.utils.contains('DISTRO_FEATURES', 'efi-secure-boot', 'check_deploy_keys', '', d)}"
+do_image_complete[prefuncs] += "${@'check_boot_public_key' if d.getVar('GRUB_SIGN_VERIFY') == '1' else ''}"
 do_image_complete[prefuncs] += "do_sign_initramfs"
