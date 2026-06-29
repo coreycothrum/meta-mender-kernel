@@ -19,8 +19,10 @@ RDEPENDS:${PN}    = "                   \
 
 inherit bitbake-variable-substitution
 
+S = "${UNPACKDIR}"
+
 do_install () {
-  install -m 0755 ${WORKDIR}/mender-kernel-init.sh ${D}/init
+  install -m 0755 ${S}/mender-kernel-init.sh ${D}/init
 }
 
 inherit allarch
