@@ -8,8 +8,8 @@ repos:
 
   meta-bitbake-variable-substitution:
     url   : "https://github.com/coreycothrum/meta-bitbake-variable-substitution.git"
-    branch: master
-    commit: f32561bfd8d791df8127432649075a35194b4949
+    branch: wrynose
+    commit: f94f838863aad1e4be637f6e7f7f3ca411763c14
 
   meta-mender:
     url   : "https://github.com/mendersoftware/meta-mender.git"
